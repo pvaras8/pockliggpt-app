@@ -23,16 +23,19 @@ with col2:
 
 st.divider()
 
+FORM_URL = "https://forms.gle/ZhdqS3GGDu9By4Eh7"
+
 st.header("Request collaboration")
 
-with st.form("form"):
-    name = st.text_input("Name")
-    email = st.text_input("Email")
-    service = st.selectbox("Service", ["Molecule generation", "Full study"])
-    pdb = st.text_input("PDB / Target")
-    desc = st.text_area("Project description")
+st.markdown("""
+We support both exploratory molecule generation and full computational drug discovery studies.
 
-    submit = st.form_submit_button("Send")
+- ✔ Target-based molecule generation  
+- ✔ Docking and scoring workflows  
+- ✔ Molecular dynamics simulations  
+- ✔ Structure-based analysis  
 
-if submit:
-    st.success("We will contact you soon.")
+We will review your request and contact you shortly.
+""")
+
+st.link_button("🚀 Request collaboration", FORM_URL)
