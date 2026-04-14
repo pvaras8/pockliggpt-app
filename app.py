@@ -22,7 +22,7 @@ PockLigGPT is a pocket-conditioned molecular generation framework based on GPT a
 st.divider()
 
 # ===== SERVICES =====
-st.markdown("## What we offer")
+st.markdown("## What we offer?")
 
 col1, col2 = st.columns(2)
 
