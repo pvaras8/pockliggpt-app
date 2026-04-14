@@ -1,41 +1,76 @@
 import streamlit as st
 
+# Config
 st.set_page_config(page_title="PockLigGPT", layout="wide")
 
-st.title("PockLigGPT")
-st.subheader("AI-driven molecule generation for protein targets")
+FORM_URL = "https://forms.gle/ZhdqS3GGDu9By4Eh7"
+
+# ===== HEADER =====
+col_logo, col_title = st.columns([1, 4])
+
+with col_logo:
+    st.image("logo.png", width=120)
+
+with col_title:
+    st.title("PockLigGPT")
+    st.markdown("### AI-driven molecule generation for protein targets")
 
 st.markdown("""
 PockLigGPT is a pocket-conditioned molecular generation framework based on GPT architectures and reinforcement learning.
-
-We offer two collaboration options:
 """)
+
+st.divider()
+
+# ===== SERVICES =====
+st.markdown("## What we offer")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("### 🧪 Option A — Target-based molecule generation")
-    st.write("Generate candidate molecules for a given protein or PDB.")
+    st.markdown("""
+    ### 🧪 Target-based molecule generation
+    
+    Generate candidate molecules conditioned on a protein pocket or PDB structure.
+    
+    - ✔ Molecule generation  
+    - ✔ Prioritization  
+    - ✔ Preliminary docking  
+    
+    Ideal for exploratory studies.
+    """)
 
 with col2:
-    st.markdown("### 🧬 Option B — Full computational study")
-    st.write("End-to-end workflow including docking, scoring and simulations.")
+    st.markdown("""
+    ### 🧬 Full computational study
+    
+    End-to-end computational drug discovery workflow.
+    
+    - ✔ Advanced docking  
+    - ✔ Rescoring (e.g., Glide)  
+    - ✔ Molecular dynamics  
+    - ✔ Structural analysis  
+    
+    Designed for deeper R&D collaborations.
+    """)
 
 st.divider()
 
-FORM_URL = "https://forms.gle/ZhdqS3GGDu9By4Eh7"
-
-st.header("Request collaboration")
+# ===== CTA =====
+st.markdown("## 🚀 Request collaboration")
 
 st.markdown("""
-We support both exploratory molecule generation and full computational drug discovery studies.
+We collaborate with academic and industry partners in early-stage drug discovery.
 
-- ✔ Target-based molecule generation  
-- ✔ Docking and scoring workflows  
-- ✔ Molecular dynamics simulations  
-- ✔ Structure-based analysis  
-
-We will review your request and contact you shortly.
+Submit your project and we will review it and get back to you shortly.
 """)
 
-st.link_button("🚀 Request collaboration", FORM_URL)
+st.link_button("🚀 Submit request", FORM_URL)
+
+st.markdown("---")
+
+# ===== FOOTER =====
+st.markdown("""
+<small>
+PockLigGPT • AI for structure-based drug discovery  
+</small>
+""", unsafe_allow_html=True)
